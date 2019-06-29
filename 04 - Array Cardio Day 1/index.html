@@ -29,6 +29,7 @@
 
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
+
     // first version
     /*const fifteen = inventors.filter(function (inventor) {
         if (inventor.year >= 1500 && inventor.year < 1600) {
@@ -47,6 +48,7 @@
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+
     // first version
     /*const ordered = inventors.sort(function (firstPerson, secondPerson) {
         if (firstPerson.year > secondPerson.year) {
@@ -61,10 +63,21 @@
 
     console.table(ordered);
 
-
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
 
+    //first version
+    /*var totalYears = 0;
+    for (var i = 0; i < inventors.length; i++) {
+        totalYears += inventors[i].passed - inventors[i].year;
+    }*/
+
+    // second arrow function version
+    const totalYears = inventors.reduce((total, inventor) => {
+        return total + (inventor.passed - inventor.year);
+    }, 0);
+
+    console.log(totalYears);
 
     // 5. Sort the inventors by years lived
 
