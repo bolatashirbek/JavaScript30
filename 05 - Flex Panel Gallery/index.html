@@ -38,9 +38,9 @@
 <script>
     const panels = document.querySelectorAll('.panel');
 
-    function toggleOption() {
+    function toggleOpen() {
         console.log('Hello');
-        this.classList.toggle('open')
+        this.classList.toggle('open');
     }
 
     function toggleActive(e) {
@@ -50,7 +50,7 @@
         }
     }
 
-    panels.forEach(panel => panel.addEventListener('click', toggleOption));
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
     panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
 </script>
 </body>
